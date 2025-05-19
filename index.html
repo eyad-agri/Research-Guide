@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدليل الذكي للباحث</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap');
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #f9fafb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+        
+        .page-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 0;
+        }
+        
+        .cover {
+            height: 150mm;
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .section-title {
+            border-right: 4px solid #3b82f6;
+            padding-right: 1rem;
+            margin: 2rem 0 1rem;
+        }
+        
+        .tool-card {
+            border-right: 3px solid #3b82f6;
+            transition: all 0.3s ease;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(59, 130, 246, 0.1);
+        }
+        
+        .toc-link {
+            color: #3b82f6;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        
+        .toc-link:hover {
+            color: #1e40af;
+            padding-right: 5px;
+        }
+        
+        .page-break {
+            page-break-after: always;
+        }
+        
+        @media print {
+            .page-container {
+                box-shadow: none;
+                max-width: none;
+            }
+            
+            body {
+                background-color: white;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="page-container">
+        <!-- الغلاف -->
+        <div class="cover">
+            <div class="text-6xl font-bold mb-8">الدليل الذكي للباحث</div>
+            <div class="text-xl mb-16">دليل شامل للأدوات والموارد البحثية المتقدمة</div>
+            <div class="text-2xl mt-16">إعداد الأستاذ ياسر</div>
+            <div class="text-xl">مدير مكتبة كلية الخدمة الاجتماعية</div>
+        </div>
+        
+        <!-- المحتويات -->
+        <div class="p-8">
+            <!-- ملخص تنفيذي -->
+            <div class="my-12">
+                <h2 class="text-3xl font-bold mb-4 text-blue-700">ملخص تنفيذي</h2>
+                <div class="bg-blue-50 p-6 rounded-lg border border-blue-200">
+                    <p class="mb-4">
+                        يهدف "الدليل الذكي للباحث" إلى مساعدة الباحثين والأكاديميين على تعزيز إنتاجيتهم البحثية من خلال الاستفادة من أحدث التقنيات المتاحة، خاصة تلك المدعومة بالذكاء الاصطناعي.
+                    </p>
+                    <p class="mb-4">
+                        يتضمن هذا الدليل مجموعة منتقاة من الأدوات والموارد في مختلف مراحل البحث العلمي بدءًا من جمع البيانات، مرورًا بتحليلها وصياغة البحوث، وصولًا إلى مرحلة النشر والاستشهاد المرجعي.
+                    </p>
+                    <p>
+                        تم تصنيف الأدوات حسب وظائفها لتسهيل الوصول إليها، مع شرح مختصر لكل أداة وإرفاق الرابط الرسمي لها. يمثل هذا الدليل خارطة طريق للباحثين للاستفادة من التحول الرقمي في مجال البحث العلمي.
+                    </p>
+                </div>
+            </div>
+
+            <!-- جدول المحتويات -->
+            <div class="my-10">
+                <h2 class="text-3xl font-bold mb-6 text-blue-700">جدول المحتويات</h2>
+                <ul class="space-y-2">
+                    <li class="py-2 border-b border-gray-200">
+                        <a href="#ai-tools" class="toc-link text-lg">1. أدوات الذكاء الاصطناعي المفيدة للباحثين</a>
+                    </li>
+                    <li class="py-2 border-b border-gray-200">
+                        <a href="#open-databases" class="toc-link text-lg">2. قواعد البيانات العلمية المفتوحة والمجانية</a>
+                    </li>
+                    <li class="py-2 border-b border-gray-200">
+                        <a href="#digital-libraries" class="toc-link text-lg">3. بنوك المعرفة والمكتبات الرقمية الكبرى المجانية</a>
+                    </li>
+                    <li class="py-2 border-b border-gray-200">
+                        <a href="#translation-tools" class="toc-link text-lg">4. مواقع الترجمة الاحترافية المدعومة بالذكاء الاصطناعي</a>
+                    </li>
+                    <li class="py-2 border-b border-gray-200">
+                        <a href="#pdf-tools" class="toc-link text-lg">5. أدوات التعامل مع ملفات PDF</a>
+                    </li>
+                    <li class="py-2 border-b border-gray-200">
+                        <a href="#docx-tools" class="toc-link text-lg">6. أدوات التعامل مع ملفات DOCX</a>
+                    </li>
+                    <li class="py-2 border-b border-gray-200">
+                        <a href="#search-engines" class="toc-link text-lg">7. محركات البحث الأكاديمية المدعومة بالذكاء الاصطناعي</a>
+                    </li>
+                    <li class="py-2">
+                        <a href="#additional-resources" class="toc-link text-lg">8. موارد إضافية</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- أدوات الذكاء الاصطناعي المفيدة للباحثين -->
+            <div id="ai-tools" class="my-16">
+                <h2 class="section-title text-3xl font-bold text-blue-700">أدوات الذكاء الاصطناعي المفيدة للباحثين</h2>
+                <p class="mb-6 text-gray-600">تساعد هذه الأدوات الباحثين في مختلف مراحل البحث العلمي، من تحليل البيانات إلى كتابة البحوث وتلخيصها وتنسيق الاستشهادات المرجعية.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- أداة 1 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-robot text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">Jenni AI</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            أداة ذكاء اصطناعي مصممة خصيصًا لتعزيز الكتابة الأكاديمية، تساعد الباحثين في التغلب على حواجز الكتابة وتحسين جودة الأوراق البحثية، مع ميزات تحليل المحتوى وتقديم الاقتراحات.
+                        </p>
+                        <a href="https://jenni.ai/ar/for-researchers" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- أداة 2 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-search text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">Semantic Scholar</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            محرك بحث أكاديمي يعمل بالذكاء الاصطناعي، يعطي الأولوية للمحتوى العلمي المناسب للباحث. يساعد في تحليل الأوراق البحثية واستخلاص المعلومات المهمة، وتوفير توصيات ذكية للقراءات ذات الصلة.
+                        </p>
+                        <a href="https://www.semanticscholar.org/" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- أداة 3 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-chart-bar text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">SciSpace</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            منصة متكاملة للباحثين تستخدم الذكاء الاصطناعي لاستكشاف الأبحاث وتحليلها، كما توفر إمكانية التلخيص الآلي للأوراق العلمية، وطرح الأسئلة على المقالات، وتنظيم المراجع بطريقة فعالة.
+                        </p>
+                        <a href="https://typeset.io/" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- أداة 4 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-book text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">Writefull</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            أداة متخصصة في تحسين الكتابة الأكاديمية باللغة الإنجليزية، توفر اقتراحات لتحسين الأسلوب والقواعد النحوية، وتقدم ملاحظات على الهيكل العام للورقة العلمية وتحليل اللغة المستخدمة.
+                        </p>
+                        <a href="https://www.writefull.com/" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- أداة 5 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-file-alt text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">Scholarcy</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            أداة تعمل بالذكاء الاصطناعي لتلخيص الأبحاث العلمية الطويلة، تحدد النقاط الرئيسية والنتائج والاستشهادات المهمة، وتنظمها بطريقة منهجية متسلسلة تساعد الباحث على الاستيعاب السريع.
+                        </p>
+                        <a href="https://www.scholarcy.com/" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- أداة 6 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-quote-right text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">Schobot</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            مساعد الباحثين بالذكاء الاصطناعي العربي، يقدم مساعدة في كتابة الأبحاث العلمية والرسائل الأكاديمية، مع التركيز على المحتوى العربي وتقديم توصيات لتحسين جودة البحث.
+                        </p>
+                        <a href="https://schobot.co/" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- قواعد البيانات العلمية المفتوحة والمجانية -->
+            <div id="open-databases" class="my-16">
+                <h2 class="section-title text-3xl font-bold text-blue-700">قواعد البيانات العلمية المفتوحة والمجانية</h2>
+                <p class="mb-6 text-gray-600">مجموعة من قواعد البيانات العلمية المفتوحة والمجانية التي تغطي مختلف التخصصات الاجتماعية والإنسانية والطبية.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- قاعدة بيانات 1 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-database text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">EBSCO Open Access</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            مجموعة من قواعد البيانات البحثية المجانية تغطي مجموعة متنوعة من الموضوعات للطلاب والباحثين وأمناء المكتبات، تتضمن مقالات علمية ومراجع في مجالات متعددة.
+                        </p>
+                        <a href="https://www.ebsco.com/ar/products/research-databases/free-databases" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- قاعدة بيانات 2 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-microscope text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">PubMed Central (PMC)</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            مستودع رقمي مفتوح للأبحاث الطبية والحيوية، يوفر وصولًا مجانيًا للمقالات العلمية المنشورة في المجلات المرموقة، ويحتوي على أكثر من 7 ملايين دراسة طبية متاحة للجميع.
+                        </p>
+                        <a href="https://www.ncbi.nlm.nih.gov/pmc/" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- قاعدة بيانات 3 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-globe-americas text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">DOAJ</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            دليل المجلات المفتوحة (Directory of Open Access Journals) يوفر قاعدة بيانات ضخمة تضم آلاف المجلات العلمية المحكمة والمفتوحة المصدر في مختلف التخصصات الأكاديمية.
+                        </p>
+                        <a href="https://doaj.org/" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- قاعدة بيانات 4 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-brain text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">SSRN</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            شبكة أبحاث العلوم الاجتماعية (Social Science Research Network) توفر وصولًا مفتوحًا للأوراق البحثية في العلوم الاجتماعية والإنسانية، بما في ذلك الاقتصاد والقانون وعلم النفس.
+                        </p>
+                        <a href="https://www.ssrn.com/" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- قاعدة بيانات 5 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-archive text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">arXiv</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            مستودع إلكتروني للمطبوعات العلمية في مجالات الرياضيات والفيزياء وعلوم الحاسب، يسمح للباحثين بمشاركة أعمالهم قبل التحكيم الرسمي، مما يسرع من وتيرة تبادل المعرفة العلمية.
+                        </p>
+                        <a href="https://arxiv.org/" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- قاعدة بيانات 6 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-newspaper text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">BASE</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            محرك بحث أكاديمي متخصص في الموارد الأكاديمية المفتوحة، يوفر وصولًا إلى أكثر من 240 مليون مستند من أكثر من 8000 مصدر، مع التركيز على المصادر العلمية المتاحة مجانًا.
+                        </p>
+                        <a href="https://www.base-search.net/" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- بنوك المعرفة والمكتبات الرقمية الكبرى المجانية -->
+            <div id="digital-libraries" class="my-16">
+                <h2 class="section-title text-3xl font-bold text-blue-700">بنوك المعرفة والمكتبات الرقمية الكبرى المجانية</h2>
+                <p class="mb-6 text-gray-600">مجموعة من المكتبات الرقمية وبنوك المعرفة التي توفر وصولًا مجانيًا للكتب والمراجع والموارد العلمية.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- مكتبة 1 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-university text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">بنك المعرفة المصري</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            أكبر مكتبة رقمية في العالم تقدم مصادر غير محدودة للمصريين، تتضمن مجموعة ضخمة من الكتب والمجلات والمراجع العلمية في مختلف المجالات، مع واجهات مخصصة للطلاب والباحثين والجمهور العام.
+                        </p>
+                        <a href="https://www.ekb.eg/ar/" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- مكتبة 2 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-book-open text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">المكتبة الرقمية العالمية</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            مشروع برعاية منظمة اليونسكو يتيح وصولًا مجانيًا للمواد الثقافية الهامة من مختلف دول العالم، تضم مخطوطات وكتب نادرة وخرائط وتسجيلات صوتية وأفلام ومواد ثقافية متنوعة.
+                        </p>
+                        <a href="https://www.wdl.org/ar/" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- مكتبة 3 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-landmark text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">مكتبة الشرق الأوسط الرقمية</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            توفر إمكانية الاطلاع المجاني والمفتوح على التراث الثقافي الغني للشرق الأوسط وشمال أفريقيا، من خلال تجميع مقتنيات من مؤسسات عديدة حول العالم.
+                        </p>
+                        <a href="https://dlmenetwork.org/ar/library/home" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- مكتبة 4 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-atlas text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">مكتبة نور</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            مكتبة رقمية للكتب والروايات الإلكترونية العربية والعالمية، تحتوي آلاف الكتب والروايات في جميع المجالات بصيغة PDF وDOC، وتتيح للمؤلفين نشر الكتب على الإنترنت.
+                        </p>
+                        <a href="https://www.noor-book.com/" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- مكتبة 5 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-books text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">Internet Archive</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            مكتبة رقمية ضخمة تضم ملايين الكتب والأفلام والموسيقى والبرامج والمواقع الأرشيفية، توفر خدمة "استعارة" الكتب الرقمية وقراءتها مجانًا عبر الإنترنت.
+                        </p>
+                        <a href="https://archive.org/" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- مكتبة 6 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-book text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">Project Gutenberg</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            مكتبة تضم أكثر من 60,000 كتاب إلكتروني مجاني، تتركز على الكتب التي انتهت حقوق ملكيتها الفكرية، وتوفر الكتب بصيغ متعددة تناسب مختلف أجهزة القراءة الإلكترونية.
+                        </p>
+                        <a href="https://www.gutenberg.org/" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- مواقع الترجمة الاحترافية المدعومة بالذكاء الاصطناعي -->
+            <div id="translation-tools" class="my-16">
+                <h2 class="section-title text-3xl font-bold text-blue-700">مواقع الترجمة الاحترافية المدعومة بالذكاء الاصطناعي</h2>
+                <p class="mb-6 text-gray-600">أدوات ترجمة متطورة تعتمد على تقنيات الذكاء الاصطناعي لتوفير ترجمات دقيقة عالية الجودة.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- أداة ترجمة 1 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-language text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">DeepL</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            واحد من أدق مواقع الترجمة الاحترافية المدعومة بالذكاء الاصطناعي، يتفوق في فهم السياق والمصطلحات المتخصصة، ويوفر ترجمات تبدو طبيعية وأقرب للغة البشرية من معظم المنافسين.
+                        </p>
+                        <a href="https://www.deepl.com/translator" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- أداة ترجمة 2 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fab fa-google text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">Google Translate</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            أشهر أدوات الترجمة في العالم، يدعم أكثر من 100 لغة، ويوفر ميزات متقدمة مثل الترجمة الفورية والترجمة عبر الكاميرا وترجمة المحادثات الصوتية، مع تحسينات مستمرة بفضل تقنيات التعلم العميق.
+                        </p>
+                        <a href="https://translate.google.com/" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- أداة ترجمة 3 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-exchange-alt text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">OpenL Translate</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            أداة ترجمة دقيقة تعتمد على الذكاء الاصطناعي، تدعم أكثر من 100 لغة، بما في ذلك الإنجليزية والعربية والفرنسية والألمانية، وتوفر ترجمة للنصوص والمستندات مع الحفاظ على التنسيق.
+                        </p>
+                        <a href="https://openl.io/ar/" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- أداة ترجمة 4 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-comment-dots text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">HIX Translate</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            مترجم يعمل بتقنية الذكاء الاصطناعي GPT، يقدم ترجمة بين أكثر من 100 لغة بدقة عالية، ويتميز بفهم السياق والمفاهيم المعقدة، مما يجعله مثاليًا للنصوص العلمية والأكاديمية.
+                        </p>
+                        <a href="https://hix.ai/ar/translate" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- أداة ترجمة 5 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-file-alt text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">Sider AI Translator</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            يستخدم نماذج ذكاء اصطناعي متقدمة، بما في ذلك ChatGPT وClaude وGemini لترجمة دقيقة للكلمات والجمل والفقرات، مع ميزة التعامل مع النصوص المتخصصة والمصطلحات العلمية.
+                        </p>
+                        <a href="https://sider.ai/ar/translator/text-translator" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- أداة ترجمة 6 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-paint-brush text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">Canva Translator</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            أداة ترجمة مدمجة ضمن منصة Canva تعمل بالذكاء الاصطناعي، تتيح ترجمة النصوص والتصاميم في منصة واحدة، مع دعم لأكثر من 100 لغة، مثالية للباحثين الذين يعملون على عروض تقديمية متعددة اللغات.
+                        </p>
+                        <a href="https://www.canva.com/ar_eg/translate/" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- أدوات التعامل مع ملفات PDF -->
+            <div id="pdf-tools" class="my-16">
+                <h2 class="section-title text-3xl font-bold text-blue-700">أدوات التعامل مع ملفات PDF</h2>
+                <p class="mb-6 text-gray-600">أدوات متخصصة لتحرير وتعديل ومعالجة ملفات PDF بكفاءة عالية.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- أداة PDF 1 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="far fa-file-pdf text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">ChatPDF</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            أداة ذكية تتيح للمستخدمين "الدردشة" مع ملفات PDF واستخراج المعلومات المطلوبة في ثواني، مثالية للباحثين الذين يتعاملون مع الأوراق العلمية والكتب المرجعية الطويلة.
+                        </p>
+                        <a href="https://chatpdf.com/" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- أداة PDF 2 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-file-upload text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">Smallpdf</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            منصة متكاملة للتعامل مع ملفات PDF، توفر أكثر من 20 أداة لتحويل وضغط وتحرير وتقسيم ودمج ملفات PDF، مع ميزات متقدمة مثل التعرف الضوئي على النصوص (OCR) وإضافة التوقيعات الإلكترونية.
+                        </p>
+                        <a href="https://smallpdf.com/ar" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- أداة PDF 3 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-file-signature text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">UPDF</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            برنامج متكامل يمكنه قراءة وتعديل وترجمة وتلخيص ملفات PDF، ويحول النصوص الممسوحة ضوئيًا لنصوص قابلة للتعديل بضغطة واحدة، مع ميزات متقدمة للتعليق وإضافة الملاحظات.
+                        </p>
+                        <a href="https://updf.com/ar/" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- أداة PDF 4 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-question-circle text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">AskYourPDF</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            تتيح للمستخدمين طرح الأسئلة حول محتوى ملفات PDF والحصول على إجابات دقيقة، مثالية للباحثين والطلاب الذين يتعاملون مع الكتب والمقالات العلمية المعقدة والطويلة.
+                        </p>
+                        <a href="https://askyourpdf.com/" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- أداة PDF 5 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-file-alt text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">PDF.ai</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            أداة ذكاء اصطناعي مخصصة لتحليل وتلخيص ملفات PDF المعقدة، توفر إمكانية استخراج المعلومات الأساسية وتنظيمها، وتحويل الجداول والرسوم البيانية إلى بيانات قابلة للاستخدام.
+                        </p>
+                        <a href="https://pdf.ai/" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- أداة PDF 6 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-search-plus text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">Adobe Acrobat Reader</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            البرنامج الأكثر شهرة للتعامل مع ملفات PDF، يوفر النسخة المجانية إمكانيات قراءة وتعليق وتوقيع الملفات، بينما توفر النسخة المدفوعة ميزات متقدمة مثل التحرير والتحويل وحماية المستندات.
+                        </p>
+                        <a href="https://acrobat.adobe.com/me/ar/" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- أدوات التعامل مع ملفات DOCX -->
+            <div id="docx-tools" class="my-16">
+                <h2 class="section-title text-3xl font-bold text-blue-700">أدوات التعامل مع ملفات DOCX</h2>
+                <p class="mb-6 text-gray-600">أدوات متخصصة للتعامل مع ملفات Word (DOCX) وتحريرها وتنظيفها وتحويلها.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- أداة DOCX 1 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-file-word text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">Microsoft Word Online</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            نسخة مجانية عبر الإنترنت من برنامج Microsoft Word، توفر معظم الميزات الأساسية للتعامل مع ملفات DOCX، مع إمكانية التعاون المتزامن على المستندات وحفظها تلقائيًا على السحابة.
+                        </p>
+                        <a href="https://www.microsoft.com/ar-ww/microsoft-365/free-office-online-for-the-web" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- أداة DOCX 2 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fab fa-google text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">Google Docs</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            معالج نصوص مجاني يدعم استيراد وتصدير ملفات DOCX، مع ميزات قوية للتعاون والمشاركة، والتكامل مع خدمات Google الأخرى، ويوفر أدوات لتحليل البيانات وإنشاء المخططات المتقدمة.
+                        </p>
+                        <a href="https://docs.google.com/" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- أداة DOCX 3 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-edit text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">LibreOffice Writer</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            برنامج معالجة نصوص مفتوح المصدر ومجاني بالكامل، يتوافق بشكل ممتاز مع ملفات DOCX، ويوفر مجموعة شاملة من الأدوات للتحرير والتنسيق والتصميم، مع دعم للغات متعددة بما فيها العربية.
+                        </p>
+                        <a href="https://www.libreoffice.org/discover/writer/" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- أداة DOCX 4 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-exchange-alt text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">IntelliPPT</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            أداة متخصصة تعمل بالذكاء الاصطناعي لتحويل ملفات DOCX إلى عروض تقديمية احترافية بشكل تلقائي، مع الحفاظ على التنسيق والمحتوى الأصلي وتحسينه بصريًا.
+                        </p>
+                        <a href="https://intellippt.com/" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- أداة DOCX 5 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-wrench text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">EaseUS Document Repair</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            أداة متخصصة في إصلاح ملفات DOCX التالفة أو غير القابلة للفتح، تستعيد النصوص والصور والتنسيقات من الملفات المعطوبة، وهي مفيدة للباحثين الذين يتعاملون مع وثائق قديمة أو معطوبة.
+                        </p>
+                        <a href="https://www.easeus.ae/file-repair-tips/repair-a-corrupted-docx-file.html" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- أداة DOCX 6 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-broom text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">File Format Apps</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            مجموعة من الأدوات المجانية عبر الإنترنت لمعالجة وتنسيق ملفات DOCX، بما في ذلك التوقيع الإلكتروني، إضافة العلامات المائية، وتحويل الصيغ المختلفة، مع التركيز على سهولة الاستخدام والأمان.
+                        </p>
+                        <a href="https://www.fileformat.app/ar/products/word-processing/" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- محركات البحث الأكاديمية المدعومة بالذكاء الاصطناعي -->
+            <div id="search-engines" class="my-16">
+                <h2 class="section-title text-3xl font-bold text-blue-700">محركات البحث الأكاديمية المدعومة بالذكاء الاصطناعي</h2>
+                <p class="mb-6 text-gray-600">محركات بحث متخصصة تستخدم تقنيات الذكاء الاصطناعي لتحسين نتائج البحث الأكاديمي.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- محرك بحث 1 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-search text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">Semantic Scholar</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            محرك بحث أكاديمي مدعوم بالذكاء الاصطناعي، يستخدم تقنيات معالجة اللغة الطبيعية لتحليل وفهم المقالات العلمية، ويوفر تصنيفًا ذكيًا للنتائج وتوصيات مخصصة للقراءات ذات الصلة.
+                        </p>
+                        <a href="https://www.semanticscholar.org/" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- محرك بحث 2 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-brain text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">Consensus</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            محرك بحث علمي مدعوم بالذكاء الاصطناعي، يقرأ ويلخص الأبحاث العلمية ويستخلص النتائج الرئيسية، ممّا يساعد الباحثين على العثور على إجابات سريعة لأسئلتهم البحثية المعقدة.
+                        </p>
+                        <a href="https://consensus.app/" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- محرك بحث 3 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-question-circle text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">Perplexity.ai</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            محرك بحث مدعوم بالذكاء الاصطناعي يجمع بين البحث التقليدي والقدرة على طرح الأسئلة والحوار، يعرض المعلومات في صورة إجابات مباشرة مع الاستشهاد بالمصادر، مما يوفر تجربة بحث أكاديمي فعالة.
+                        </p>
+                        <a href="https://www.perplexity.ai/" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- محرك بحث 4 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-project-diagram text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">Scinapse</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            محرك بحث أكاديمي ذكي يستخدم الذكاء الاصطناعي لفهم محتويات الأوراق العلمية والعلاقات بينها، يساعد الباحثين في استكشاف الاتجاهات البحثية وتحديد المقالات الأكثر تأثيرًا في مجالاتهم.
+                        </p>
+                        <a href="https://scinapse.io/" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- محرك بحث 5 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-robot text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">Iris.ai</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            أداة استكشاف علمي تعمل بالذكاء الاصطناعي، تساعد الباحثين في العثور على الأبحاث ذات الصلة عبر تخصصات متعددة، وتحليل العلاقات بين المفاهيم العلمية، وبناء خرائط معرفية مترابطة.
+                        </p>
+                        <a href="https://iris.ai/" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- محرك بحث 6 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fab fa-google text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">Google Scholar</h3>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            أشهر محركات البحث الأكاديمية، يوفر بحثًا شاملًا في المقالات العلمية والأطروحات والكتب، مع ميزات متقدمة مثل الاقتباسات وتحديد المصادر المفتوحة، والإشعارات بالمنشورات الجديدة.
+                        </p>
+                        <a href="https://scholar.google.com/" target="_blank" class="text-blue-600 hover:underline flex items-center">
+                            <span>زيارة الموقع</span>
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- موارد إضافية -->
+            <div id="additional-resources" class="my-16">
+                <h2 class="section-title text-3xl font-bold text-blue-700">موارد إضافية</h2>
+                <p class="mb-6 text-gray-600">أدوات ناشئة واعدة في مجال البحث العلمي والأكاديمي.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- مورد إضافي 1 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-chart-line text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">أدوات تحليل البيانات</h3>
+                        </div>
+                        <div class="text-gray-700 mb-4">
+                            <ul class="list-disc pr-5 space-y-2">
+                                <li><strong>Power BI:</strong> أداة تحليل بيانات من مايكروسوفت تتيح إنشاء تقارير ولوحات معلومات تفاعلية.</li>
+                                <li><strong>KNIME:</strong> منصة تحليل بيانات مفتوحة المصدر للتحليل المتقدم وتصور البيانات.</li>
+                                <li><strong>SPSS:</strong> برنامج إحصائي متخصص في تحليل البيانات الاجتماعية والإحصائية.</li>
+                                <li><strong>Python مع مكتبات التحليل:</strong> بيئة برمجة قوية للتحليل العلمي باستخدام مكتبات مثل Pandas وNumPy.</li>
+                                <li><strong>R:</strong> لغة برمجة إحصائية متخصصة في تحليل البيانات والتمثيل المرئي.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- مورد إضافي 2 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-quote-left text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">أدوات الاستشهادات المرجعية</h3>
+                        </div>
+                        <div class="text-gray-700 mb-4">
+                            <ul class="list-disc pr-5 space-y-2">
+                                <li><strong>Mendeley:</strong> أداة لإدارة المراجع والاستشهاد المرجعي مع إمكانية حفظ وتنظيم الأوراق البحثية.</li>
+                                <li><strong>Zotero:</strong> برنامج مفتوح المصدر لجمع وتنظيم وإدارة المراجع والاستشهادات.</li>
+                                <li><strong>EndNote:</strong> برنامج متخصص في إدارة المراجع والاستشهادات مع تكامل مع برامج معالجة النصوص.</li>
+                                <li><strong>مرجعي:</strong> موقع عربي لصياغة الاستشهادات المرجعية وفق أنماط مختلفة.</li>
+                                <li><strong>RefWorks:</strong> أداة إدارة مراجع عبر الإنترنت تتيح الوصول للمراجع من أي مكان.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- مورد إضافي 3 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-laptop-code text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">أدوات بحثية متقدمة</h3>
+                        </div>
+                        <div class="text-gray-700 mb-4">
+                            <ul class="list-disc pr-5 space-y-2">
+                                <li><strong>Connected Papers:</strong> أداة بصرية لاستكشاف الأوراق الأكاديمية المترابطة وبناء خرائط البحث.</li>
+                                <li><strong>Dimensions:</strong> منصة بحث شاملة للربط بين المنشورات والتمويلات والبراءات والتجارب السريرية.</li>
+                                <li><strong>Sciflow:</strong> منصة تحرير متعاونة للأوراق العلمية مع قوالب للمجلات الأكاديمية.</li>
+                                <li><strong>ResearchGate:</strong> شبكة اجتماعية للباحثين لمشاركة الأبحاث والتعاون وتتبع الاستشهادات.</li>
+                                <li><strong>DeepSeek-R1:</strong> نموذج ذكاء اصطناعي متخصص في الأبحاث العلمية والتحليل الأكاديمي.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- مورد إضافي 4 -->
+                    <div class="tool-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-pen-fancy text-blue-500 text-2xl ml-3"></i>
+                            <h3 class="text-xl font-bold">أدوات الكتابة الأكاديمية</h3>
+                        </div>
+                        <div class="text-gray-700 mb-4">
+                            <ul class="list-disc pr-5 space-y-2">
+                                <li><strong>Grammarly:</strong> أداة تدقيق لغوي ونحوي متقدمة للكتابة باللغة الإنجليزية.</li>
+                                <li><strong>Overleaf:</strong> محرر تعاوني عبر الإنترنت لوثائق LaTeX، مثالي للأوراق العلمية والرياضيات.</li>
+                                <li><strong>Academic Phrasebank:</strong> مورد يوفر عبارات وصياغات جاهزة للكتابة الأكاديمية.</li>
+                                <li><strong>ProWritingAid:</strong> أداة تحرير وتدقيق متقدمة للكتابة الأكاديمية والبحثية.</li>
+                                <li><strong>Wordvice AI:</strong> مساعد ذكي لتحرير وتحسين المخطوطات الأكاديمية.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- الختام -->
+            <div class="my-16 bg-blue-50 p-8 rounded-lg border border-blue-100">
+                <h2 class="text-3xl font-bold mb-6 text-blue-700 text-center">ختامًا</h2>
+                <p class="text-gray-700 mb-4">
+                    يهدف "الدليل الذكي للباحث" إلى تسهيل رحلة البحث العلمي من خلال توفير أدوات حديثة ومتطورة يمكن أن تساعد الباحثين في مختلف مراحل أبحاثهم الأكاديمية.
+                </p>
+                <p class="text-gray-700 mb-4">
+                    مع التطور المستمر في مجال الذكاء الاصطناعي وتقنيات المعلومات، فإن الأدوات المتاحة للباحثين تزداد قوة وتنوعًا يومًا بعد يوم. لذا ننصح بمتابعة أحدث التطورات في هذا المجال للاستفادة من الإمكانيات الجديدة المتاحة.
+                </p>
+                <p class="text-gray-700">
+                    نأمل أن يكون هذا الدليل بداية مفيدة لاستكشاف عالم الأدوات البحثية الرقمية، وندعوك لمشاركة تجاربك واكتشافاتك مع زملائك الباحثين لتعم الفائدة على الجميع.
+                </p>
+            </div>
+
+            <!-- حقوق الملكية -->
+            <div class="text-center py-10 text-gray-600 text-sm">
+                <p>© 2025 الدليل الذكي للباحث - جميع الحقوق محفوظة</p>
+                <p class="mt-2">إعداد الأستاذ ياسر – مدير مكتبة كلية الخدمة الاجتماعية</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
